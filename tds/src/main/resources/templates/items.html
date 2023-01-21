@@ -2,13 +2,27 @@
 
 <h1> Les Items : </h1>
 
-<table>
+<table class="ui compact celled definition table">
     <tr>
+        <th></th>
+        <th></th>
         <th>Nom</th>
+        <th>Evaluation</th>
     </tr>
     {{#items}}
     <tr>
+        <td>
+            <form method="get" action="/items/dec/{{nom}}">
+                <button class="ui button" ><i class="minus icon"></i></button>
+            </form>
+        </td>
+        <td>
+            <form method="get" action="/items/inc/{{nom}}">
+                <button class="ui button" ><i class="plus icon"></i></button>
+            </form>
+        </td>
         <td>{{nom}}</td>
+        <td>{{evaluation}}</td>
     </tr>
     {{/items}}
 </table>

@@ -13,6 +13,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @SessionAttributes(value = "items")
 @Controller
@@ -24,21 +25,6 @@ public class MainController {
         return new ArrayList<>();
     }
 
-
-    @RequestMapping("modelViewSample")
-    public ModelAndView mvSample() {
-        ModelAndView mv = new ModelAndView("items");
-        mv.addObject("items", getItems());
-        return mv;
-    }
-
-    @PostMapping("items/addNew")
-    public ModelAndView addItem(@ModelAttribute("items") List<Element> items, @RequestParam(name="name", required = false) String name){
-        items.add(new Element(name, ""));
-        ModelAndView mav = new ModelAndView("redirect:/items");
-        return mav;
-    }
-
     @RequestMapping(path="items", method = {RequestMethod.POST, RequestMethod.GET})
     public String listItems(Model model) {
         return "items";
@@ -47,6 +33,31 @@ public class MainController {
     @GetMapping("items/new")
     public String addItem(Model model) {
         return "itemsNew";
+    }
+
+    @PostMapping("items/addNew")
+    public ModelAndView addItem(@ModelAttribute("items") List<Element> items, @RequestParam(name="name", required = false) String name){
+        items.add(new Element(name, 0));
+        ModelAndView mav = new ModelAndView("redirect:/items");
+        return mav;
+    }
+
+    @GetMapping("items/inc/{nom}")
+    public RedirectView incEval(@ModelAttribute("items") List<Element> items, @PathVariable(name="nom", required = false) String nom) {
+        for (Element item : items)
+            if (nom.equals(item.getNom())){
+                item.setEvaluation(item.getEvaluation()+1);
+            }
+        return new RedirectView("../../items");
+    }
+
+    @GetMapping("items/dec/{nom}")
+    public RedirectView decEval(@ModelAttribute("items") List<Element> items, @PathVariable(name="nom", required = false) String nom) {
+        for (Element item : items)
+            if (nom.equals(item.getNom())){
+                item.setEvaluation(item.getEvaluation()-1);
+            }
+        return new RedirectView("../../items");
     }
 
 
