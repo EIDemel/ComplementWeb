@@ -1,0 +1,21 @@
+{{> /header}}
+
+<h1> Les Items : </h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    {{#items}}
+    <tr>
+        <td>{{nom}}</td>
+    </tr>
+    {{/items}}
+</table>
+
+<form method="get" action="/items/new">
+    <input class="ui button" type="submit" value="Ajouter"/>
+</form>
+
+{{> /footer}}

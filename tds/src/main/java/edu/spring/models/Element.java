@@ -11,6 +11,11 @@ public class Element {
         return evaluation;
     }
 
+    public Element(String nom) {
+        this.nom = nom;
+        this.evaluation = evaluation;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Element el){
