@@ -8,6 +8,7 @@ import edu.spring.models.Element;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
@@ -31,10 +32,10 @@ public class MainController {
         return mv;
     }
 
-    @GetMapping("items/new/{name}")
-    public ModelAndView addItem(@ModelAttribute("items") List<Element> items, @PathVariable(name="name", required = false) String name){
-        items.add(new Element(name));
-        ModelAndView mav = new ModelAndView("items");
+    @PostMapping("items/addNew")
+    public ModelAndView addItem(@ModelAttribute("items") List<Element> items, @RequestParam(name="name", required = false) String name){
+        items.add(new Element(name, ""));
+        ModelAndView mav = new ModelAndView("redirect:/items");
         return mav;
     }
 
@@ -43,7 +44,10 @@ public class MainController {
         return "items";
     }
 
-
+    @GetMapping("items/new")
+    public String addItem(Model model) {
+        return "itemsNew";
+    }
 
 
 

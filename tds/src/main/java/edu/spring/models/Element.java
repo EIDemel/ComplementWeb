@@ -11,7 +11,7 @@ public class Element {
         return evaluation;
     }
 
-    public Element(String nom) {
+    public Element(String nom, String evaluation) {
         this.nom = nom;
         this.evaluation = evaluation;
     }
