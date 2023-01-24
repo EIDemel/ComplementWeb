@@ -1,14 +1,11 @@
 package edu.spring.tds.controllers;
 
 import ch.qos.logback.core.model.Model;
-import ch.qos.logback.core.net.server.Client;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import edu.spring.models.Element;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
@@ -56,6 +53,15 @@ public class MainController {
         for (Element item : items)
             if (nom.equals(item.getNom())){
                 item.setEvaluation(item.getEvaluation()-1);
+            }
+        return new RedirectView("../../items");
+    }
+
+    @GetMapping("items/delete/{nom}")
+    public RedirectView deleteItem(@ModelAttribute("items") List<Element> items, @PathVariable(name="nom", required = false) String nom) {
+        for (int i = 0; i < items.size(); i++)
+            if (nom.equals(items.get(i).getNom())){
+                items.remove(i);
             }
         return new RedirectView("../../items");
     }

@@ -8,6 +8,8 @@
         <th></th>
         <th>Nom</th>
         <th>Evaluation</th>
+        <th></th>
+
     </tr>
     {{#items}}
     <tr>
@@ -22,7 +24,12 @@
             </form>
         </td>
         <td>{{nom}}</td>
-        <td>{{evaluation}}</td>
+        <td>{{evaluation}}</td><td>
+        <form method="get" action="/items/delete/{{nom}}">
+            <button class="ui button" ><i class="trash alternate icon"></i></button>
+        </form>
+    </td>
+
     </tr>
     {{/items}}
 </table>
