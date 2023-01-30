@@ -1,0 +1,48 @@
+2023-01-30 09:25:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; expected "identifier"; SQL statement:
+create table user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id)) [42001-214]
+2023-01-30 09:25:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists [*]user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists [*]user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization"; expected "identifier"; SQL statement:
+alter table if exists user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization [42001-214]
+2023-01-30 09:25:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; expected "identifier"; SQL statement:
+alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references user [42001-214]
+2023-01-30 09:31:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; expected "identifier"; SQL statement:
+create table user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id)) [42001-214]
+2023-01-30 09:31:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists [*]user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists [*]user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization"; expected "identifier"; SQL statement:
+alter table if exists user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization [42001-214]
+2023-01-30 09:31:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; expected "identifier"; SQL statement:
+alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references user [42001-214]
+2023-01-30 09:34:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; expected "identifier"; SQL statement:
+create table user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id)) [42001-214]
+2023-01-30 09:34:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists [*]user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists [*]user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization"; expected "identifier"; SQL statement:
+alter table if exists user add constraint FKi3ynrf4qjomj2hdjx7ssa3mlh foreign key (organization_id) references organization [42001-214]
+2023-01-30 09:34:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; expected "identifier"; SQL statement:
+alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references user [42001-214]
+2023-01-30 09:36:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; attendu "identifier"
+Syntax error in SQL statement "create table [*]user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id))"; expected "identifier"; SQL statement:
+create table user (id integer not null, email varchar(255), firstname varchar(255), lastname varchar(255), password varchar(255), suspended boolean not null, organization_id integer, primary key (id)) [42001-214]
+2023-01-30 09:36:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists [*]user add constraint FK6o13bbpqyqo21nx3wg67vbtqa foreign key (organization_id) references td2_organization"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists [*]user add constraint FK6o13bbpqyqo21nx3wg67vbtqa foreign key (organization_id) references td2_organization"; expected "identifier"; SQL statement:
+alter table if exists user add constraint FK6o13bbpqyqo21nx3wg67vbtqa foreign key (organization_id) references td2_organization [42001-214]
+2023-01-30 09:36:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; attendu "identifier"
+Syntax error in SQL statement "alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references [*]user"; expected "identifier"; SQL statement:
+alter table if exists user_group add constraint FKnld5s8qnpr8b5j202hy33vag4 foreign key (users_id) references user [42001-214]
