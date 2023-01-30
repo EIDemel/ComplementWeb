@@ -7,13 +7,23 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
 import org.springframework.web.servlet.view.RedirectView
 
-@SessionAttributes(value = ["items"])
+@SessionAttributes(value = ["categories"])
 @Controller
 @RequestMapping("/")
 class MainController {
-    @get:ModelAttribute("items")
+
+    @get:ModelAttribute("categories")
+    val categories: List<String>
+        get() = listOf("Amis", "Famille", "Professionnels")
+
+   /* @get:ModelAttribute("items")
     val items: Set<Items>
-        get() = HashSet()
+        get() = HashSet()*/
+
+    @GetMapping("")
+    fun listAccueil(model: Model): String {
+        return "categories"
+    }
 
     @GetMapping("hello")
     @ResponseBody
