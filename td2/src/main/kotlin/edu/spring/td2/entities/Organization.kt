@@ -8,10 +8,10 @@ import jakarta.persistence.*
 class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private var id = 0
-    private var name: String? = null
-    private var domain: String? = null
-    private var aliases: String? = null
+    var id = 0
+    var name: String? = null
+    var domain: String? = null
+    var aliases: String? = null
     //private val organizationsettings: String[] = null
 
     @OneToMany(cascade = [CascadeType.ALL], mappedBy = "organization")
