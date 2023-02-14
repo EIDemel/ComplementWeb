@@ -13,6 +13,10 @@
         <button class="ui button black" ><i class="plus icon"></i> Ajouter une orgarnisation</button>
     </form>
 
+    {{#msg}}
+        {{>partials/message}}
+    {{/msg}}
+
     <table class="ui single line table">
         <thead>
             <tr>
@@ -31,15 +35,9 @@
             <td>{{domain}}</td>
             <td>{{aliases}}</td>
             <td class="right aligned ">
-                <button class="circular ui basic icon button">
-                    <i class="eye icon"></i>
-                </button>
-                <button class="circular ui basic icon button">
-                    <i class="edit icon"></i>
-                </button>
-                <button class="circular ui basic icon button red">
-                    <i class="times icon"></i>
-                </button>
+                <a class="circular ui basic icon button" href="../orgas/display/{{id}}" > <i class="eye icon"></i></a>
+                <a class="circular ui basic icon button" href="../orgas/edit/{{id}}" ><i class="edit icon"></i></a>
+                <a class="circular ui basic icon button red" href="../orgas/delete/{{id}}" > <i class="times icon"></i></a>
             </td>
         </tr>
         {{/orgas}}
@@ -55,7 +53,9 @@
             </tr>
         </tfoot>
     </table>
+    {{#dlt}}
+        {{>partials/suppression}}
+    {{/dlt}}
 </div>
-
 
 {{> partials/footer}}
