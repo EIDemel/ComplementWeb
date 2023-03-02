@@ -5,7 +5,7 @@ import java.awt.Color
 
 @Entity
 @Table(name = "Tag")
-class Tag () {
+class  Tag () {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id : Int = 0

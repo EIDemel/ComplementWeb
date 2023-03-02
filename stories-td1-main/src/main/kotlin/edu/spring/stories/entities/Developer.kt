@@ -12,7 +12,7 @@ class Developer () {
     var lastname : String = ""
 
     @OneToMany
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn( nullable = false)
     var stories: MutableSet<Story> = mutableSetOf()
 
     constructor(firstname: String, lastname: String) : this() {

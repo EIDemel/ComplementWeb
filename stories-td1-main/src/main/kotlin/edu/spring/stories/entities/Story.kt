@@ -12,11 +12,11 @@ class Story() {
     var name : String = ""
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn( nullable = false)
     var developer: Developer? = null
 
     @ManyToMany
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn( nullable = false)
     var tags: MutableSet<Tag> = mutableSetOf()
 
 
