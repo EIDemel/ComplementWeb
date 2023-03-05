@@ -1,0 +1,54 @@
+<table class="ui single line table">
+    <thead>
+    <tr>
+        <th>Développeur</th>
+        <th>Stories</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#devs}}
+    <tr>
+        <td>{{firstname}} {{lastname}}</td>
+        <form method="GET" action="../story/{{id}}/giveup">
+            <td>
+                {{#stories}}
+                <input type="hidden" name="id_sto" value="{{id}}">
+                <button class="ui label" type="submit">
+                    {{name}}
+                    <i class="delete icon"></i>
+                </button>
+                {{/stories}}
+            </td>
+        </form>
+        <td class="left aligned ">
+            <form method="POST" action="../developer/{{id}}/story">
+                <div class="ui action input">
+                    <input type="text" name="name" placeholder="Story name">
+                    <input type="submit" class="ui secondary button green" value="Ajouter US et affecter">
+                </div>
+                <a class="ui secondary button black" href="../developer/{{id}}/delete"> <i class="sign out icon"></i>
+                    Quitter le projet</a>
+            </form>
+        </td>
+    </tr>
+    {{/devs}}
+    {{^devs}}
+    <tr>
+        <td colspan="3">
+
+            <div class="ui icon warning message">
+                <i class="exclamation circle icon"></i>
+                <div class="content">
+                    <div class="header">
+                        pas de développeur
+                    </div>
+                    <p>Il n'y a pas de développeur dans la base de données.</p>
+                </div>
+            </div>
+
+        </td>
+    </tr>
+    {{/devs}}
+    </tbody>
+</table>

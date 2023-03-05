@@ -11,6 +11,6 @@ interface StoryRepository : CrudRepository<Story, Int> {
 
     fun findByDeveloperIsNull(): List<Story>
 
-    fun findByNameAndDeveloperId(name : String , id : Int): Story
+    fun findByNameAndDeveloperId(name : String , id : Int): Story?
 
 }

@@ -1,11 +1,12 @@
 {{> main/header}}
-    <div class="ui segment">
-        <form method="POST" action="/developer/add">
-            <label for="firstname">Nom </label>
-            <input type="text" id="firstname" name="firstname">
-            <label for="lastname">Nom </label>
-            <input type="text" id="lastname" name="lastname">
-            <input type="submit" value="Add Item">
-        </form>
-    </div>
+    <h2>Développeurs <div class="ui teal left pointing label ">{{devs.size}}</div> </h2>
+
+    {{> partials/addingDev}}
+
+    {{> partials/devList}}
+
+    <h2>Users stories à répartir <div class="ui red left pointing label ">{{stories.size}}</div> </h2>
+
+    {{> partials/usersStories}}
+
 {{> main/footer}}
