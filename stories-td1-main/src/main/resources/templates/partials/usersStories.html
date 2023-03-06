@@ -15,14 +15,20 @@
             <div>
                 <div class="ui action input">
                     <form method="POST" action="../story/{{id}}/action">
-                        <select  name="id_dev" class="ui selection dropdown">
-                            {{#devs}}
-                            <option  value="{{id}}">
-                                {{firstname}} {{lastname}}
-                            </option>
-                            {{/devs}}
+                        <select name="id_dev" class="ui selection dropdown" {{^devs}} disabled {{/devs}}>
+                        {{#devs}}
+                        <option value="{{id}}">
+                            {{firstname}} {{lastname}}
+                        </option>
+                        {{/devs}}
+                        {{^devs}}
+                        <option selected value="">
+                            Pas de dev
+                        </option>
+                        {{/devs}}
+
                         </select>
-                        <button name="story-action" value="affect" class="ui button " type="submit">
+                        <button {{^devs}} disabled {{/devs}} name="story-action" value="affect" class="ui button " type="submit">
                             <i class="plus icon"></i>
                         </button>
                         <button name="story-action" value="remove" class="ui red button " type="submit">

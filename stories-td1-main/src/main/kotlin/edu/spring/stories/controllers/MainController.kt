@@ -75,9 +75,9 @@ class MainController {
     fun addStoryToDeveloper(
         @RequestParam("story-action") storyAction: String,
         @PathVariable id: Int,
-        @ModelAttribute("id_dev") id_dev: Int
+        @ModelAttribute("id_dev") id_dev: String
     ): RedirectView {
-        val developpeur = devRepo.findById(id_dev).get()
+
         val storie = storyRepo.findById(id).get()
 
         if (storyAction == "remove") {
@@ -88,7 +88,7 @@ class MainController {
 
         if (storyAction == "affect") {
             if (storie != null) {
-
+                val developpeur = devRepo.findById(id_dev.toInt()).get()
                 storie.developer = developpeur
                 storyRepo.save(storie)
             }
