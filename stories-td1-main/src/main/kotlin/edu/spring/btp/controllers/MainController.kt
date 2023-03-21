@@ -18,6 +18,8 @@ class MainController {
         // Ajoutez vos domaines ici à partir de la racine
         model["domain"] = domainRepository.findByParentIsNull().get(0)
         model["domain-children"] = domainRepository.findByParentIsNull().get(0).children
+        model["domain-children-cumule"] = domainRepository.findByParentIsNull().get(0).getComplaintsCount()
+
         return "index"
     }
 }
