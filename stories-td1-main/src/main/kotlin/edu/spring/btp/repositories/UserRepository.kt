@@ -7,4 +7,8 @@ import org.springframework.data.jpa.repository.Query
 interface UserRepository: JpaRepository<User, Int> {
     @Query(nativeQuery = true,value="SELECT * FROM \"user\" ORDER BY rand() LIMIT 1")
     fun getRandomUser(): User
+
+    @Query(nativeQuery = true,value="SELECT * FROM \"user\" WHERE \"user_username\" = :username OR \"user_email\" = :email")
+    fun findByUsernameOrEmail(username: String, email: String): User?
+
 }

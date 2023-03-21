@@ -6,7 +6,7 @@ import edu.spring.btp.entities.Provider
 import edu.spring.btp.entities.User
 import io.github.serpro69.kfaker.faker
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.security.core.userdetails.UserDetailsService
+//import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -26,8 +26,8 @@ class InitController {
     @Autowired
     lateinit var providerRepository: edu.spring.btp.repositories.ProviderRepository
 
-    @Autowired
-    lateinit var dbUserService: UserDetailsService
+   /* @Autowired
+    lateinit var dbUserService: UserDetailsService*/
 
     private fun initProviders(count:Int){
         val faker = faker { }

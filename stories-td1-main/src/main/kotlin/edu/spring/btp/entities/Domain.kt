@@ -32,4 +32,15 @@ class Domain() {
     @OneToMany(mappedBy = "domain")
     open var complaints= mutableListOf<Complaint>()
 
+    fun getComplaintsCount(): Int {
+        return complaints.count()
+    }
+
+    fun hasChildren(): Boolean {
+        if (children.isEmpty()){
+            return false
+        }
+        return true
+    }
+
 }
