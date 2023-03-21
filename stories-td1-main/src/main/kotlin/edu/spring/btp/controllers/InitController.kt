@@ -26,7 +26,7 @@ class InitController {
     @Autowired
     lateinit var providerRepository: edu.spring.btp.repositories.ProviderRepository
 
-   /* @Autowired
+    /*@Autowired
     lateinit var dbUserService: UserDetailsService*/
 
     private fun initProviders(count:Int){

@@ -1,3 +1,33 @@
 {{> main/header }}
+<h1 class="ui blue header"> {{domain.name}}  </h1>
+<h1 class="ui header inverted">Domaine(s)
+    <div class="ui label">
+        {{domain-children.size}}
+    </div>
+</h1>
+<ul>
+
+    <div class="ui four cards">
+        {{#domain-children}}
+        <div class="card">
+            <div class="content">
+                <div class="header">{{name}}</div>
+                <div class="meta">
+                    {{providers.size}} providers
+                </div>
+
+                <div class="description">{{description}}</div>
+                <i class=" purple bug icon"></i>
+            </div>
+
+            <div class="ui bottom attached button">
+                <i class="open door icon"></i>Ouvrir
+            </div>
+        </div>
+        {{/domain-children}}
+    </div>
+
+
+</ul>
 
 {{> main/footer }}
