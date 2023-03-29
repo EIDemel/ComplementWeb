@@ -7,6 +7,7 @@ class Provider() {
     constructor(rs: String) : this() {
         this.rs = rs
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     open var id = 0

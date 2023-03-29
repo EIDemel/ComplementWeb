@@ -1,0 +1,39 @@
+{{> main/header }}
+
+<h1 class="ui blue header">
+    {{parent.name}}
+</h1>
+<h1 class="ui header inverted">Domaine(s)
+    <div class="ui label">
+        {{domain-child.size}}
+    </div>
+</h1>
+
+<a href="/index" class="ui button">
+    <i class="closed door icon"></i> Retour
+</a>
+<div class="ui divider"></div>
+
+<ul>
+
+    <div class="ui four cards">
+        {{#domain-child}}
+        <div class="card">
+            <div class="content">
+                <div class="header">{{name}}</div>
+
+                <div class="description">{{description}}</div>
+                <i class=" purple bug icon"></i> <a href="../complaints/{{name}}"> {{getComplaintsCount}} plaintes </a>
+                <div class="ui label">
+                    {{complaints.size}}
+                </div>
+            </div>
+
+        </div>
+        {{/domain-child}}
+    </div>
+
+
+</ul>
+
+{{> main/footer }}

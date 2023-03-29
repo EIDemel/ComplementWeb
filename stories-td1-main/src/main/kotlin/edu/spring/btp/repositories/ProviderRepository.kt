@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.Query
 interface ProviderRepository:JpaRepository<Provider, Int> {
     @Query(nativeQuery = true,value="SELECT * FROM \"provider\" ORDER BY rand() LIMIT 1")
     fun getRandomProvider(): Provider
+
 }

@@ -1,0 +1,39 @@
+{{> main/header }}
+
+<h1 class="ui blue header">
+    {{complaints-provider}}
+</h1>
+<h1 class="ui header inverted">Complaint(s)
+    <div class="ui label">
+        {{complaints.size}}
+    </div>
+</h1>
+<form method="POST" action="/complaints/{{complaints-provider}}/new">
+    <a href="/domain/{{parent.name}}" class="ui button">
+        <i class="closed door icon"></i> Retour
+    </a>
+
+    <button name="story-action" value="travel" class="ui positive button">
+        <i class="plus icon"></i> Add
+    </button>
+</form>
+<div class="ui divider"></div>
+
+<ul>
+
+    <div class="ui four cards">
+        {{#complaints}}
+        <div class="card">
+            <div class="content">
+                <div class="header">{{title}}</div>
+                <div class="description"> User : {{user.username}}</div>
+                <div class="meta">
+                    Desc : {{description}}
+                </div>
+            </div>
+        </div>
+        {{/complaints}}
+    </div>
+
+</ul>
+{{> main/footer }}

@@ -1,0 +1,27 @@
+{{> main/header }}
+<div class="ui inverted attached segment">
+    <h1 class="ui blue header">
+        Ajout Complaint
+    </h1>
+</div>
+<div class="ui inverted attached segment">
+    <form method="post" action="/complaints/{{domain}}/new">
+        <div class="ui fluid input">
+            <input type="text" id="title" name="title" placeholder="Titre ...">
+        </div>
+        <br>
+        <div class="ui fluid  input">
+            <input id="description" name="description" placeholder="Description ..."></input>
+        </div>
+        <br>
+        <select name="provider" class="ui fluid dropdown button">
+                {{#provider}}
+                    <option class="item" value="{{id}}">{{rs}}</option>
+                {{/provider}}
+        </select>
+        <br>
+        <button class="fluid ui button" name="story-action" value="add" type="submit">Submit</button>
+    </form>
+</div>
+
+{{> main/footer }}
